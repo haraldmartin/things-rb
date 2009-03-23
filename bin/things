@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+
+require File.join(File.dirname(__FILE__), *%w".. lib things")
+require "optparse"
+
+options = { :tasks => { :completed => false } }
+opts = OptionParser.new do |opts|
+  opts.separator ''
+  opts.separator 'Options:'
+  
+  opts.banner = "Usage: things [options] today|next|inbox|logbook|trash"
+  
+  def opts.show_usage
+    puts self
+    exit  
+  end
+  
+  opts.on("-d FILENAME", "--database FILENAME", "Use the specified Things database") do |database|    
+    options[:database] = database
+  end
+  
+  opts.on("-c", "--completed", 'Shows only completed tasks') { options[:tasks] = { :completed => true } }
+  opts.on("-a", "--all", 'Shows all tasks in the focus') { |f| options[:tasks] = { } }
+
+  opts.on_tail("-h", "--help", "Shows this help message") { opts.show_usage }
+  opts.on_tail("-v", "--version", "Shows version") do
+    puts Things::Version::STRING
+    exit
+  end
+
+  opts.show_usage if ARGV.empty?
+  
+  begin
+    opts.order(ARGV) { |focus| options[:focus] = focus }
+  rescue OptionParser::ParseError => e
+    opts.warn e.message
+    opts.show_usage
+  end
+end
+
+opts.parse!
+opts.show_usage unless options.key?(:focus)
+
+things = Things.new(:database => options.delete(:database))
+tasks = things.focus(options[:focus]).tasks(options[:tasks]).map do |task|
+  tags    = "(#{task.tags.join(' ')})" if task.tags?
+  project = "[#{task.parent}]" if task.parent?
+  bullet  = task.completed? ? "✓" : task.canceled? ? "×" : "-"
+  [bullet, task.title, tags, project].compact.join(" ")
+end
+
+puts tasks.compact.sort.join("\n")
+
