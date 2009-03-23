@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('things-rb', '0.1.0') do |p|
+Echoe.new('things-rb', '0.1.1') do |p|
   p.description = "Library and command-line tool for accessing Things.app databases"
   p.url         = "http://github.com/haraldmartin/things-rb"
   p.author      = "Martin Ström"
