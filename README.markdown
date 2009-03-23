@@ -15,8 +15,17 @@ There are many reasons why you would use a command line version of Things, inclu
 
 ## Install
 
+Install using RubyGems
+
     gem install haraldmartin-things-rb --source http://gems.github.com
-    
+
+Install via git:
+
+    $ git clone git://github.com/haraldmartin/things-rb.git
+    $ cd things-rb
+    $ rake manifest
+    $ sudo rake install
+    $ things --version  # should work
 
 ## Usage
 
