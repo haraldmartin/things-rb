@@ -18,7 +18,7 @@ module Things
   class FocusNotFound < StandardError; end
   class InvalidFocus < StandardError; end
   
-  def Things.new(*options)
-    Document.new(*options)
+  def Things.new(*options, &block)
+    Document.new(*options, &block)
   end
 end

@@ -45,4 +45,15 @@ class DocumentTest < Test::Unit::TestCase
     completed = @things.today(:completed => true )
     assert completed.all? { |e| e.title.include?("complete") }
   end
+  
+  [Things, Things::Document].each do |klass|
+    test "should allow a block for #{klass}.new" do
+      block = false
+      klass.new(:database => DATABASE_FIXTURE_PATH) do |d|
+        block = true
+        assert_instance_of(Things::Document, d)
+      end
+      assert(block)
+    end
+  end
 end

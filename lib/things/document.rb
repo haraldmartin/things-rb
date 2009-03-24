@@ -4,10 +4,11 @@ module Things
     
     attr_reader :database_file
   
-    def initialize(options = {})
+    def initialize(options = {}, &block)
       @database_file = options[:database] || DEFAULT_DATABASE_PATH
       @focus_cache = {}
       parse!
+      yield self if block_given?
     end
   
     def database
