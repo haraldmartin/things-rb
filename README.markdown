@@ -15,7 +15,13 @@ There are many reasons why you would use a command line version of Things, inclu
 
 ## Install
 
-    gem install haraldmartin-things-rb --source http://gems.github.com
+    $ sudo gem install haraldmartin-things-rb --source http://gems.github.com
+
+If you're on default Mac OS X Leopard and haven't upgraded your RubyGem installation you'll need to to this first:
+
+    $ sudo gem update --system
+
+When the upgrade is done, just runt the `gem install ...` command above and you're set.
 
 
 ## Usage
