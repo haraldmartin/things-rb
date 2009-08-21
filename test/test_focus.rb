@@ -10,7 +10,8 @@ class FocusTest < Test::Unit::TestCase
       "complete today item with a tag",
       "today item with multiple tags",
       "email bar",
-      "today item"
+      "today item",
+      "today item with content"
     ]
   end
 
@@ -54,7 +55,7 @@ class FocusTest < Test::Unit::TestCase
   test "should find the same number of tasks as in Today" do
     tasks = @things.focus(:today).tasks
     assert_instance_of(Array, tasks)
-    assert_equal(7, tasks.length)
+    assert_equal(8, tasks.length)
   end
   
   test "should find the tasks' titles" do
