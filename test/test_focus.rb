@@ -11,7 +11,7 @@ class FocusTest < Test::Unit::TestCase
       "today item with multiple tags",
       "email bar",
       "today item",
-      "today item with content"
+      "today item with content (notes)"
     ]
   end
 
