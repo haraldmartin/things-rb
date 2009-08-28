@@ -97,8 +97,7 @@ module Things
     alias_method :order, :position
     
     def due_date
-      @due_date ||= (node = @xml_node.at("attribute[@name='datedue']")) &&
-        node.inner_text.to_f.to_cocoa_date
+      @due_date ||= date_attribute("datedue")
     end
 
     def due?
@@ -106,8 +105,7 @@ module Things
     end
 
     def scheduled_date
-      @due_date ||= (node = @xml_node.at("attribute[@name='tickledate']")) &&
-        node.inner_text.to_f.to_cocoa_date
+      @due_date ||= date_attribute('tickledate')
     end
     
     def scheduled?
@@ -155,6 +153,10 @@ module Things
       else
         []
       end
+    end
+  
+    def date_attribute(name)
+      (node = @xml_node.at("attribute[@name='#{name}']")) && node.inner_text.to_f.to_cocoa_date
     end
   end
 end
