@@ -105,6 +105,15 @@ module Things
       due_date && Time.now > due_date
     end
 
+    def scheduled_date
+      @due_date ||= (node = @xml_node.at("attribute[@name='tickledate']")) &&
+        node.inner_text.to_f.to_cocoa_date
+    end
+    
+    def scheduled?
+      !!scheduled_date
+    end
+
     def bullet
       completed? ? "✓" : canceled? ? "×" : "-"
     end

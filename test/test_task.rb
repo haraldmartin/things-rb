@@ -144,6 +144,16 @@ class TaskTest < Test::Unit::TestCase
   test "should not be due for a task without due date" do
     assert !find_task(:basic).due?
   end
+  
+  test "should find the schedule date" do
+    scheduled = task_by_id("z166")
+    assert_equal "2019-03-20", scheduled.scheduled_date.strftime("%Y-%m-%d")
+  end
+  
+  test "should know if a task i scheduled" do
+    assert task_by_id("z166").scheduled?
+    assert !find_task(:basic).scheduled?
+  end
 
   test "each state should have a bullet" do
     assert_equal "✓", task_by_id("z173").bullet # complete
