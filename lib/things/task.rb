@@ -105,7 +105,7 @@ module Things
     end
 
     def scheduled_date
-      @due_date ||= date_attribute('tickledate')
+      @scheduled_date ||= date_attribute('tickledate')
     end
     
     def scheduled?
