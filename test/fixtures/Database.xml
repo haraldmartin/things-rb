@@ -188,7 +188,7 @@
         <attribute name="applicationquitdate" type="date">259495720.56406000256538391113</attribute>
         <attribute name="maintenancedate" type="date">259455601.00000000000000000000</attribute>
         <attribute name="cleanupdate" type="date">259210800.00000000000000000000</attribute>
-        <relationship name="scheduledtodos" type="0/0" destination="TODO" idrefs="z154 z166"></relationship>
+        <relationship name="scheduledtodos" type="0/0" destination="TODO" idrefs="z154 z166 z186"></relationship>
     </object>
     <object type="FOCUS" id="z123">
         <attribute name="focuslevel" type="int16">0</attribute>
@@ -1234,6 +1234,7 @@
         <attribute name="focuslevel" type="int16">0</attribute>
         <attribute name="datemodified" type="date">259456950.89940801262855529785</attribute>
         <attribute name="datecreated" type="date">259456940.58271199464797973633</attribute>
+        <attribute name="datedue" type="date">270770400.00000000000000000000</attribute>
         <attribute name="title" type="string">cut my hair</attribute>
         <attribute name="index" type="int32">1</attribute>
         <attribute name="identifier" type="string">771D0663-7CD2-4309-BFE4-294203C43D42</attribute>

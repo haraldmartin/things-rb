@@ -126,4 +126,9 @@ class TaskTest < Test::Unit::TestCase
     ids = %w[z163 z161 z160 z157 z159 z156 z165 z158 z162].sort
     assert_equal(ids, task_with_children.children_ids.sort)
   end
+
+  test "should find the due date" do
+    task = task_by_id("z186")
+    assert_equal "2009-08-01", task.due_date.strftime("%Y-%m-%d")
+  end
 end

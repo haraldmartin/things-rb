@@ -96,6 +96,11 @@ module Things
     alias_method :index, :position
     alias_method :order, :position
     
+    def due_date
+      @due_date ||= (node = @xml_node.at("attribute[@name='datedue']")) &&
+        node.inner_text.to_f.to_cocoa_date
+    end
+
     def children_ids
       ids_from_relationship('children')
     end
