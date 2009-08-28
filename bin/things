@@ -45,8 +45,7 @@ things = Things.new(:database => options.delete(:database))
 tasks = things.focus(options[:focus]).tasks(options[:tasks]).map do |task|
   tags    = "(#{task.tags.join(' ')})" if task.tags?
   project = "[#{task.parent}]" if task.parent?
-  bullet  = task.completed? ? "✓" : task.canceled? ? "×" : "-"
-  [bullet, task.title, tags, project].compact.join(" ")
+  [task.bullet, task.title, tags, project].compact.join(" ")
 end
 
 puts tasks.compact.sort.join("\n")
