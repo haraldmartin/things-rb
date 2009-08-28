@@ -19,7 +19,7 @@ module Things
       @focus_cache[name] ||= Focus.new(name, @doc)
     end
   
-    [:today, :inbox, :trash, :logbook, :next].each do |name|
+    [:today, :inbox, :trash, :logbook, :next, :scheduled].each do |name|
       class_eval <<-EOF
         def #{name}(options = {})               # def inbox(options = {})
           focus(:#{name}).tasks(options)        #   focus(:inbox).tasks(options)

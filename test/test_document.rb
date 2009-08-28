@@ -24,7 +24,7 @@ class DocumentTest < Test::Unit::TestCase
     assert_equal "foo", things.database.to_s
   end
 
-  [:today, :inbox, :trash, :logbook, :next].each do |type|
+  [:today, :inbox, :trash, :logbook, :next, :scheduled].each do |type|
     test "should create a Focus instance for type #{type}" do
       focus = @things.focus(type)
       assert_instance_of(Things::Focus, focus)
