@@ -132,6 +132,19 @@ class TaskTest < Test::Unit::TestCase
     assert_equal "2009-08-01", task.due_date.strftime("%Y-%m-%d")
   end
 
+  test "should know that the task is due" do
+    assert task_by_id("z186").due?
+  end
+
+  test "should know that the task is not due" do
+    Time.stubs(:now).returns(Time.parse('2009-07-31'))
+    assert !task_by_id("z186").due?
+  end
+
+  test "should not be due for a task without due date" do
+    assert !find_task(:basic).due?
+  end
+
   test "each state should have a bullet" do
     assert_equal "✓", task_by_id("z173").bullet # complete
     assert_equal "×", task_by_id("z189").bullet # canceled
