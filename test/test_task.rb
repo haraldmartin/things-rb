@@ -7,10 +7,10 @@ class TaskTest < Test::Unit::TestCase
   
   def find_task(name)
     title = {
-      :with_tags    => 'today item with multiple tags',
-      :basic        => 'today item',
-      :with_parent  => 'email bar',
-      :with_content => 'today item with content',
+      :with_tags   => 'today item with multiple tags',
+      :basic       => 'today item',
+      :with_parent => 'email bar',
+      :with_notes  => 'today item with content (notes)',
     }[name]
     @things.today.detect { |t| t.title == title }
   end
@@ -39,9 +39,14 @@ class TaskTest < Test::Unit::TestCase
     assert_equal 0, find_task(:basic).tag_ids.length
   end
 
-  test "should find the task's content" do
-    task = find_task(:with_content)
-    assert_match(/Check wait times here/, task.content)
+  test "should find the task's notes" do
+    task = find_task(:with_notes)
+    assert_match(/Check wait times here/, task.notes)
+  end
+  
+  test "should know if there are notes" do
+    assert find_task(:with_notes).notes?
+    assert !find_task(:basic).notes?
   end
   
   test "should find the task's tag titles" do

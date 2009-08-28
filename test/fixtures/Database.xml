@@ -1323,7 +1323,7 @@
         <attribute name="focuslevel" type="int16">0</attribute>
         <attribute name="datemodified" type="date">259284444.24546098709106445312</attribute>
         <attribute name="datecreated" type="date">259258000.56638500094413757324</attribute>
-        <attribute name="title" type="string">today item with content</attribute>
+        <attribute name="title" type="string">today item with content (notes)</attribute>
         <attribute name="index" type="int32">7</attribute>
         <attribute name="identifier" type="string">6FC0B919-D07E-4448-8BE5-93AA6978865A</attribute>
         <attribute name="compact" type="bool">1</attribute>

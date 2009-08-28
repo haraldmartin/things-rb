@@ -76,10 +76,14 @@ module Things
       status == CANCELED
     end
     
-    def content
-      @content ||= (node = @xml_node.at("attribute[@name='content']")) && node.inner_text.to_s
+    def notes
+      @notes ||= (node = @xml_node.at("attribute[@name='content']")) && node.inner_text.to_s
     end
-
+    
+    def notes?
+      !!notes
+    end
+    
     def status
       @status ||= (node = @xml_node.at("attribute[@name='status']")) && node.inner_text.to_i
     end
