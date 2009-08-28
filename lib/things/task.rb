@@ -77,7 +77,8 @@ module Things
     end
     
     def notes
-      @notes ||= (node = @xml_node.at("attribute[@name='content']")) && node.inner_text.to_s
+      @notes ||= (node = @xml_node.at("attribute[@name='content']")) &&
+        Hpricot.parse(node.inner_text.gsub(/\\u3c00/, "<").gsub(/\\u3e00/, ">")).inner_text
     end
     
     def notes?

@@ -1,4 +1,4 @@
-require  'test_helper'
+require 'test_helper'
 
 class TaskTest < Test::Unit::TestCase
   def setup
@@ -41,7 +41,7 @@ class TaskTest < Test::Unit::TestCase
 
   test "should find the task's notes" do
     task = find_task(:with_notes)
-    assert_match(/Check wait times here/, task.notes)
+    assert_equal %{Check wait times here: http://www.mass.gov/qrmv/boston.shtm}, task.notes
   end
   
   test "should know if there are notes" do
