@@ -101,6 +101,10 @@ module Things
         node.inner_text.to_f.to_cocoa_date
     end
 
+    def bullet
+      completed? ? "✓" : canceled? ? "×" : "-"
+    end
+
     def children_ids
       ids_from_relationship('children')
     end

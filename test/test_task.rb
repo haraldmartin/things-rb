@@ -131,4 +131,10 @@ class TaskTest < Test::Unit::TestCase
     task = task_by_id("z186")
     assert_equal "2009-08-01", task.due_date.strftime("%Y-%m-%d")
   end
+
+  test "each state should have a bullet" do
+    assert_equal "✓", task_by_id("z173").bullet # complete
+    assert_equal "×", task_by_id("z189").bullet # canceled
+    assert_equal "-", find_task(:basic).bullet  # regular
+  end
 end
