@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{things-rb}
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Martin Str\303\266m"]
-  s.date = %q{2009-03-23}
+  s.date = %q{2009-08-29}
   s.default_executable = %q{things}
   s.description = %q{Library and command-line tool for accessing Things.app databases}
   s.email = %q{martin.strom@gmail.com}

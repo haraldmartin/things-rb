@@ -79,12 +79,10 @@ Be sure to disable automatic logging of completed tasks in the Things.app prefer
 
 
 ## TODO
-- Write support (add tasks via the library)
 - Support "Projects" focus
-- Support due dates, notes etc
 - Optimize test and XML queries
 - Add tag support to binary
-- Organize the clases, make internal methods private
+- Organize the classes, make internal methods private
 
 
 ## Credits and license
