@@ -1,7 +1,8 @@
-$:.unshift File.dirname(__FILE__)
-
-require "rubygems"
-require "hpricot"
+begin
+  require 'hpricot'
+rescue LoadError => e
+  puts "Hpricot is missing. Run `gem install hpricot` to install"
+end
 require "time"
 
 class Symbol

@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), *%w".. lib things")
+require "things"
 require "test/unit"
 require "mocha"
 

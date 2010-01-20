@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require File.join(File.dirname(__FILE__), *%w".. lib things")
 require "optparse"
+require 'things'
 
 options = { :tasks => { :completed => false } }
 opts = OptionParser.new do |opts|
