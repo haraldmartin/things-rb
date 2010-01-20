@@ -1,6 +1,6 @@
 module Things
   class Document
-    DEFAULT_DATABASE_PATH = ENV['HOME'] + '/Library/Application Support/Cultured Code/Things/Database.xml' unless defined?(DEFAULT_DATABASE_PATH)
+    DEFAULT_DATABASE_PATH = "#{ENV['HOME']}/Library/Application Support/Cultured Code/Things/Database.xml" unless defined?(DEFAULT_DATABASE_PATH)
     
     attr_reader :database_file
   
