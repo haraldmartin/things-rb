@@ -38,8 +38,7 @@ Example usage:
     tasks = things.today.map do |task|
       tags    = "(#{task.tags.join(' ')})" if task.tags?
       project = "[#{task.parent}]" if task.parent?
-      bullet  = task.completed? ? "✓" : task.canceled? ? "×" : "-"
-      [bullet, task.title, tags, project].compact.join(" ")
+      [task.bullet, task.title, tags, project].compact.join(" ")
     end
     
     puts tasks.compact.sort.join("\n")
@@ -89,7 +88,7 @@ Be sure to disable automatic logging of completed tasks in the Things.app prefer
 
 By [Martin Ström](http://my-domain.se) under the MIT license:
 
->  Copyright (c) 2009 Martin Ström
+>  Copyright (c) 2009-2010 Martin Ström
 >
 >  Permission is hereby granted, free of charge, to any person obtaining a copy
 >  of this software and associated documentation files (the "Software"), to deal
