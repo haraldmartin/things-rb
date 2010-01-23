@@ -21,7 +21,7 @@ If you're on default Mac OS X Leopard and haven't upgraded your RubyGem installa
 
     $ gem update --system
 
-When the upgrade is done, just runt the `gem install ...` command above and you're set.
+When the upgrade is done, just run the `gem install ...` command above and you're set.
 
 
 ## Usage
