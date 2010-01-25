@@ -1,3 +1,4 @@
+require "rubygems"
 require "things"
 require "test/unit"
 require "mocha"

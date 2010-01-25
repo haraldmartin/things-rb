@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 module Things
   class Task
     include Comparable
@@ -5,7 +6,10 @@ module Things
     INCOMPLETED = 0
     CANCELED    = 2
     COMPLETED   = 3
-
+    CHECK_MARK  = "✓"
+    X_MARK      = "×"
+    MINUS_MARK  = "-"
+    
     def initialize(task_xml, doc)
       @doc      = doc
       @xml_node = task_xml
@@ -113,7 +117,14 @@ module Things
     end
 
     def bullet
-      completed? ? "✓" : canceled? ? "×" : "-"
+      case
+      when completed?
+        CHECK_MARK
+      when canceled?
+        X_MARK
+      else
+        MINUS_MARK
+      end
     end
 
     def children_ids
