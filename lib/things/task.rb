@@ -105,7 +105,7 @@ module Things
     end
 
     def due?
-      due_date && Time.now > due_date
+      !!due_date && Time.now > due_date
     end
 
     def scheduled_date
