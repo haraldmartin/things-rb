@@ -8,7 +8,7 @@ opts = OptionParser.new do |opts|
   opts.separator ''
   opts.separator 'Options:'
   
-  opts.banner = "Usage: things [options] today|next|inbox|logbook|trash"
+  opts.banner = "Usage: things [options] today|next|inbox|someday|logbook|trash"
   
   def opts.show_usage
     puts self
