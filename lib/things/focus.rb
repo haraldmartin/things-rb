@@ -58,6 +58,10 @@ module Things
           end
         end
       end
+            
+      if tag = options[:tag]
+        @tasks = @tasks.select { |t| t.tag?(tag) }
+      end
     end
   end
 end

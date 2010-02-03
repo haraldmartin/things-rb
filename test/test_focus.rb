@@ -95,6 +95,11 @@ class FocusTest < Test::Unit::TestCase
     assert_equal 0, tasks.select(&:completed?).length
   end
   
+  test "should filter tasks by tag" do
+    tasks = @things.focus(:next).tasks(:tag => 'home')
+    assert tasks.all? { |e| e.tag?('home') }
+  end
+  
   test "should not include projects when listing tasks" do
     with_children = @things.focus(:next).tasks.select(&:children?)
     assert_equal 0, with_children.length

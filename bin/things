@@ -4,10 +4,10 @@ require "optparse"
 require 'things'
 
 options = { :tasks => { :completed => false } }
+
 opts = OptionParser.new do |opts|
   opts.separator ''
   opts.separator 'Options:'
-  
   opts.banner = "Usage: things [options] today|next|inbox|someday|logbook|trash"
   
   def opts.show_usage
@@ -20,8 +20,9 @@ opts = OptionParser.new do |opts|
   end
   
   opts.on("-c", "--completed", 'Shows only completed tasks') { options[:tasks] = { :completed => true } }
-  opts.on("-a", "--all", 'Shows all tasks in the focus') { |f| options[:tasks] = { } }
-
+  opts.on("-a", "--all", 'Shows all tasks in the focus') { options[:tasks].delete(:completed) }
+  opts.on("-t TAG", "--tag TAG", 'Filter tasks by tag') { |f| options[:tasks][:tag] = f }
+  
   opts.on_tail("-h", "--help", "Shows this help message") { opts.show_usage }
   opts.on_tail("-v", "--version", "Shows version") do
     puts Things::Version::STRING
