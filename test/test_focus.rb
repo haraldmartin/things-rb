@@ -89,6 +89,12 @@ class FocusTest < Test::Unit::TestCase
     assert !canceled.all? { |e| e.title.include?("cancel") }
   end
   
+  test "should not find canceled nor completed tasks when passing :canceled => false, :completed => false" do
+    tasks = @things.focus(:next).tasks(:canceled => false, :completed => false)
+    assert_equal 0, tasks.select(&:canceled?).length
+    assert_equal 0, tasks.select(&:completed?).length
+  end
+  
   test "should not include projects when listing tasks" do
     with_children = @things.focus(:next).tasks.select(&:children?)
     assert_equal 0, with_children.length
