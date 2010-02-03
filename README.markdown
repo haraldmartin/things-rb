@@ -76,11 +76,18 @@ Replace `today` with other focus to list the task
 To view test document (`test/fixtures/Database.xml`) in Things, just launch Things.app with ⌥ (option/alt) down and click "Choose Library" and point it to `things-rb/test/fixtures`. 
 Be sure to disable automatic logging of completed tasks in the Things.app preferences so they won't be moved around in the document.
 
+To play nice with other package managers than Rubygems, the command line tool (`bin/things`) and the tests `test/test_helper.rb` *don't* `require 'rubygems'` before `require 'hpricot'`. So if hpricot isn't in your path you need to run the tests slightly different. 
+
+`RUBYOPT=rubygems rake` works for me to load hpricot and the other required gems, but still test the local things version (i.e. not the gem).
+
+Run the local command line tool using `ruby -r rubygems -I lib bin/things`. 
+
+Of course you can just add the require statements in your code in development without committing them.
+
 
 ## TODO
 - Support "Projects" focus
 - Optimize test and XML queries
-- Add tag support to binary
 - Organize the classes, make internal methods private
 
 
