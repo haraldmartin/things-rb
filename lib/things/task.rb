@@ -48,7 +48,7 @@ module Things
     end
     
     def tag?(name)
-      tags.include?(name)
+      tags.any? { |t| t.casecmp(name) == 0 }
     end
     
     def parent_id

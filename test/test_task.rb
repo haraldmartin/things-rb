@@ -67,6 +67,12 @@ class TaskTest < Test::Unit::TestCase
     assert(!task.tag?("Errand"))
   end
   
+  test "if the task has a specific tag in other case" do
+    task = find_task(:with_tags)
+    assert task.tag?("HOME")
+    assert !task.tag?("errand")
+  end
+  
   test "should find the tasks parent_id" do
     task = find_task(:with_parent)
     assert_equal("z154", task.parent_id)
