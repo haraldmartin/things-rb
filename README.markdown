@@ -70,6 +70,10 @@ Replace `today` with other focus to list the task
     $ things --all next
     $ things logbook
 
+To just show tasks with a specific tag, use the `-t` or `--tag` option
+    
+    $ things -t errands today
+
 
 ## Testing
 
