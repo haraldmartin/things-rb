@@ -49,5 +49,8 @@ tasks = things.focus(options[:focus]).tasks(options[:tasks]).map do |task|
   [task.bullet, task.title, tags, project].compact.join(" ")
 end
 
-puts tasks.compact.sort.join("\n")
+if (sorted = tasks.compact.sort).any?
+  puts sorted.join("\n")
+end
+
 
