@@ -77,7 +77,7 @@ To just show tasks with a specific tag, use the `-t` or `--tag` option
 
 ## Testing
 
-To view test document (`test/fixtures/Database.xml`) in Things, just launch Things.app with ⌥ (option/alt) down and click "Choose Library" and point it to `things-rb/test/fixtures`. 
+To view the test document (`test/fixtures/Database.xml`) in Things, just launch Things with ⌥ (option/alt) down and click "Choose Library" and point it to `things-rb/test/fixtures`. 
 Be sure to disable automatic logging of completed tasks in the Things.app preferences so they won't be moved around in the document.
 
 To play nice with other package managers than Rubygems, the command line tool (`bin/things`) and the tests `test/test_helper.rb` *don't* `require 'rubygems'` before `require 'hpricot'`. So if hpricot isn't in your path you need to run the tests slightly different. 
