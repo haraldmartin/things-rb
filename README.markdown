@@ -15,14 +15,17 @@ There are many reasons why you would use a command line version of Things, inclu
 
 ## Install
 
-    $ gem install things-rb
+    $ sudo gem install things-rb
 
 If you're on default Mac OS X Leopard and haven't upgraded your RubyGem installation you'll need to to this first:
 
-    $ gem update --system
+    $ sudo gem update --system
 
 When the upgrade is done, just run the `gem install ...` command above and you're set.
 
+If you had an old version of things-rb installed (when the gem was still hosted on GitHub and not Rubygems.org) you'll need to remove the old version first:
+
+    $ sudo gem uninstall haraldmartin-things-rb
 
 ## Usage
 
