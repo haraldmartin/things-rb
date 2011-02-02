@@ -1,18 +1,18 @@
-<?xml version="1.0"?>
+<?xml version="1.0" standalone="yes"?>
 <!DOCTYPE database SYSTEM "file:///System/Library/DTDs/CoreData.dtd">
 
 <database>
     <databaseInfo>
         <version>134481920</version>
         <UUID>B4FC79D0-E654-43EF-9020-A5273B3F104A</UUID>
-        <nextObjectID>189</nextObjectID>
+        <nextObjectID>192</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
                     <key>BuildNumber</key>
-                    <integer>591</integer>
+                    <integer>1430</integer>
                     <key>NSPersistenceFrameworkVersion</key>
-                    <integer>186</integer>
+                    <integer>251</integer>
                     <key>NSStoreModelVersionHashes</key>
                     <dict>
                         <key>Coworker</key>
@@ -25,7 +25,7 @@
 		</data>
                         <key>Globals</key>
                         <data>
-		xg3+cjRZK5nzTQnzZc7QQs9Glge/AHW0kv95fcBSkgA=
+		EsSnzUzfT+sCc18tL8/ZLzYC6x+HuaeJzr/FmPXZ4wc=
 		</data>
                         <key>Milestone</key>
                         <data>
@@ -33,7 +33,7 @@
 		</data>
                         <key>MobileSyncItem</key>
                         <data>
-		nhMBcaMSSTKgFnWBXIygedzMzRfTP3eGsr6TJi/DUiY=
+		VrL112kTygkjSwwsxzR83KQFXxJn5HMkA97mXEFpjrI=
 		</data>
                         <key>Note</key>
                         <data>
@@ -77,7 +77,7 @@
                     <key>NSStoreModelVersionIdentifiers</key>
                     <array></array>
                     <key>OSMajorVersion</key>
-                    <integer>5</integer>
+                    <integer>6</integer>
                     <key>OSMinorVersion</key>
                     <integer>6</integer>
                 </dict>
@@ -130,7 +130,7 @@
         <attribute name="identifier" type="string">FocusWorkflowHeading</attribute>
         <attribute name="childrenhidden" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="THING"></relationship>
-        <relationship name="children" type="0/0" destination="THING" idrefs="z124 z141 z125 z107 z129"></relationship>
+        <relationship name="children" type="0/0" destination="THING" idrefs="z107 z124 z125 z129 z141"></relationship>
         <relationship name="focustodos" type="0/0" destination="TODO"></relationship>
     </object>
     <object type="FOCUS" id="z114">
@@ -142,30 +142,6 @@
         <relationship name="children" type="0/0" destination="THING" idrefs="z142"></relationship>
         <relationship name="focustodos" type="0/0" destination="TODO"></relationship>
     </object>
-    <object type="SYNCEDCALENDAR" id="z115">
-        <attribute name="title" type="string">\u2600 Konst \u2600 Teknik</attribute>
-        <attribute name="systemid" type="string">29DBEE1D-D66F-4C4B-9F6D-E0C6A8A9D24A</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">1</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
-    </object>
-    <object type="SYNCEDCALENDAR" id="z116">
-        <attribute name="title" type="string">FB Events</attribute>
-        <attribute name="systemid" type="string">5B4C573B-20AF-4432-95EB-DFE42579609D</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">0</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
-    </object>
-    <object type="SYNCEDCALENDAR" id="z119">
-        <attribute name="title" type="string">FB Birthdays</attribute>
-        <attribute name="systemid" type="string">F8491475-05E7-4C44-88AE-4884A3ED61AF</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">0</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
-    </object>
     <object type="FOCUS" id="z120">
         <attribute name="focustype" type="int32">1</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
@@ -174,21 +150,13 @@
         <attribute name="identifier" type="string">FocusInbox</attribute>
         <relationship name="parent" type="1/1" destination="THING" idrefs="z110"></relationship>
         <relationship name="children" type="0/0" destination="THING"></relationship>
-        <relationship name="focustodos" type="0/0" destination="TODO" idrefs="z145 z153 z146 z152"></relationship>
-    </object>
-    <object type="SYNCEDCALENDAR" id="z121">
-        <attribute name="title" type="string">Hem</attribute>
-        <attribute name="systemid" type="string">BA4916AD-4891-4FEF-9A33-D0813099CC5A</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">1</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
+        <relationship name="focustodos" type="0/0" destination="TODO" idrefs="z152 z153 z146 z145"></relationship>
     </object>
     <object type="GLOBALS" id="z122">
-        <attribute name="applicationquitdate" type="date">259495720.56406000256538391113</attribute>
-        <attribute name="maintenancedate" type="date">259455601.00000000000000000000</attribute>
+        <attribute name="applicationquitdate" type="date">318303557.02173602581024169922</attribute>
+        <attribute name="maintenancedate" type="date">318229201.00000000000000000000</attribute>
         <attribute name="cleanupdate" type="date">259210800.00000000000000000000</attribute>
-        <relationship name="scheduledtodos" type="0/0" destination="TODO" idrefs="z154 z166 z186"></relationship>
+        <relationship name="scheduledtodos" type="0/0" destination="TODO" idrefs="z166 z186 z154"></relationship>
     </object>
     <object type="FOCUS" id="z123">
         <attribute name="focuslevel" type="int16">0</attribute>
@@ -217,15 +185,7 @@
         <attribute name="identifier" type="string">FocusMaybe</attribute>
         <relationship name="parent" type="1/1" destination="THING" idrefs="z113"></relationship>
         <relationship name="children" type="0/0" destination="THING"></relationship>
-        <relationship name="focustodos" type="0/0" destination="TODO" idrefs="z167 z169 z168 z170"></relationship>
-    </object>
-    <object type="SYNCEDCALENDAR" id="z126">
-        <attribute name="title" type="string">Birthdays</attribute>
-        <attribute name="systemid" type="string">E38F942E-4A0A-4D80-9AFD-8FCE6029278F</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">0</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
+        <relationship name="focustodos" type="0/0" destination="TODO" idrefs="z169 z167 z170 z168"></relationship>
     </object>
     <object type="FOCUS" id="z127">
         <attribute name="focustype" type="int32">512</attribute>
@@ -245,7 +205,7 @@
         <attribute name="identifier" type="string">FocusArchiveHeading</attribute>
         <attribute name="childrenhidden" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="THING"></relationship>
-        <relationship name="children" type="0/0" destination="THING" idrefs="z138 z127"></relationship>
+        <relationship name="children" type="0/0" destination="THING" idrefs="z127 z138"></relationship>
         <relationship name="focustodos" type="0/0" destination="TODO"></relationship>
     </object>
     <object type="FOCUS" id="z129">
@@ -259,14 +219,6 @@
         <relationship name="children" type="0/0" destination="THING"></relationship>
         <relationship name="focustodos" type="0/0" destination="TODO" idrefs="z187 z154"></relationship>
     </object>
-    <object type="SYNCEDCALENDAR" id="z130">
-        <attribute name="title" type="string">\u2600 Lisa</attribute>
-        <attribute name="systemid" type="string">94E9BA27-D0AB-4A55-9E1B-6D1E4DABF6BA</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">1</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
-    </object>
     <object type="FOCUS" id="z131">
         <attribute name="focuslevel" type="int16">0</attribute>
         <attribute name="display" type="bool">1</attribute>
@@ -276,38 +228,6 @@
         <relationship name="children" type="0/0" destination="THING"></relationship>
         <relationship name="focustodos" type="0/0" destination="TODO"></relationship>
     </object>
-    <object type="SYNCEDCALENDAR" id="z132">
-        <attribute name="title" type="string">Lisas Jobb</attribute>
-        <attribute name="systemid" type="string">37BFC803-D3EF-4BEC-88A1-006F800C34A2</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">1</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
-    </object>
-    <object type="SYNCEDCALENDAR" id="z133">
-        <attribute name="title" type="string">Jobb</attribute>
-        <attribute name="systemid" type="string">9FB2370A-FDDD-4B79-B585-9A3DEBDAEF34</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">1</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
-    </object>
-    <object type="SYNCEDCALENDAR" id="z135">
-        <attribute name="title" type="string">Twistory</attribute>
-        <attribute name="systemid" type="string">DD5186D6-F761-43B0-9BA1-DAE0058EBC10</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">0</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
-    </object>
-    <object type="SYNCEDCALENDAR" id="z136">
-        <attribute name="title" type="string">CocoaHeads</attribute>
-        <attribute name="systemid" type="string">6454C6DF-C1B7-4312-9814-1E318C7BE696</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">0</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
-    </object>
     <object type="FOCUS" id="z138">
         <attribute name="focustype" type="int32">256</attribute>
         <attribute name="focuslevel" type="int16">-1</attribute>
@@ -316,15 +236,7 @@
         <attribute name="identifier" type="string">FocusTrash</attribute>
         <relationship name="parent" type="1/1" destination="THING" idrefs="z128"></relationship>
         <relationship name="children" type="0/0" destination="THING"></relationship>
-        <relationship name="focustodos" type="0/0" destination="TODO" idrefs="z184 z164 z183"></relationship>
-    </object>
-    <object type="SYNCEDCALENDAR" id="z140">
-        <attribute name="title" type="string">Fest</attribute>
-        <attribute name="systemid" type="string">F0D538DB-6F4D-4A52-A925-D54BEB47A487</attribute>
-        <attribute name="syncs" type="bool">0</attribute>
-        <attribute name="iseditable" type="bool">1</attribute>
-        <attribute name="index" type="int32">0</attribute>
-        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
+        <relationship name="focustodos" type="0/0" destination="TODO" idrefs="z164 z183 z184"></relationship>
     </object>
     <object type="FOCUS" id="z141">
         <attribute name="focustype" type="int32">131072</attribute>
@@ -334,7 +246,7 @@
         <attribute name="identifier" type="string">FocusNextActions</attribute>
         <relationship name="parent" type="1/1" destination="THING" idrefs="z113"></relationship>
         <relationship name="children" type="0/0" destination="THING"></relationship>
-        <relationship name="focustodos" type="0/0" destination="TODO" idrefs="z157 z161 z156 z160 z188 z163 z174 z186 z175 z162 z176 z165 z189 z158 z172 z173 z171 z159 z185"></relationship>
+        <relationship name="focustodos" type="0/0" destination="TODO" idrefs="z172 z185 z160 z174 z171 z157 z165 z189 z186 z163 z159 z175 z161 z188 z158 z162 z173 z176 z156"></relationship>
     </object>
     <object type="FOCUS" id="z142">
         <attribute name="focustype" type="int32">131072</attribute>
@@ -409,20 +321,20 @@
         <relationship name="parent" type="1/1" destination="THING" idrefs="z149"></relationship>
         <relationship name="record" type="1/1" destination="RECORD"></relationship>
         <relationship name="children" type="0/0" destination="THING"></relationship>
-        <relationship name="notes" type="0/0" destination="NOTE" idrefs="z146 z159 z170"></relationship>
+        <relationship name="notes" type="0/0" destination="NOTE" idrefs="z159 z170 z146"></relationship>
     </object>
     <object type="TAG" id="z148">
         <attribute name="dateused" type="date">259456952.88088399171829223633</attribute>
         <attribute name="type" type="int32">0</attribute>
         <attribute name="shortcut" type="string">e</attribute>
         <attribute name="title" type="string">Errand</attribute>
-        <attribute name="index" type="int32">3</attribute>
+        <attribute name="index" type="int32">4</attribute>
         <attribute name="identifier" type="string">CC-Things-Tag-Errand</attribute>
         <attribute name="compact" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="THING"></relationship>
         <relationship name="record" type="1/1" destination="RECORD"></relationship>
         <relationship name="children" type="0/0" destination="THING" idrefs="z151"></relationship>
-        <relationship name="notes" type="0/0" destination="NOTE" idrefs="z161 z173 z162 z160 z186"></relationship>
+        <relationship name="notes" type="0/0" destination="NOTE" idrefs="z161 z186 z160 z162 z173"></relationship>
     </object>
     <object type="TAG" id="z149">
         <attribute name="type" type="int32">0</attribute>
@@ -437,28 +349,28 @@
         <relationship name="notes" type="0/0" destination="NOTE"></relationship>
     </object>
     <object type="TAG" id="z150">
-        <attribute name="dateused" type="date">259456937.73148599267005920410</attribute>
+        <attribute name="dateused" type="date">318303550.24933600425720214844</attribute>
         <attribute name="type" type="int32">0</attribute>
         <attribute name="shortcut" type="string">h</attribute>
         <attribute name="title" type="string">Home</attribute>
-        <attribute name="index" type="int32">2</attribute>
+        <attribute name="index" type="int32">3</attribute>
         <attribute name="identifier" type="string">CC-Things-Tag-Home</attribute>
         <relationship name="parent" type="1/1" destination="THING"></relationship>
         <relationship name="record" type="1/1" destination="RECORD"></relationship>
         <relationship name="children" type="0/0" destination="THING"></relationship>
-        <relationship name="notes" type="0/0" destination="NOTE" idrefs="z156 z154 z165 z172 z163 z146 z185"></relationship>
+        <relationship name="notes" type="0/0" destination="NOTE" idrefs="z165 z146 z156 z154 z172 z185 z163"></relationship>
     </object>
     <object type="TAG" id="z151">
         <attribute name="dateused" type="date">259456119.53935000300407409668</attribute>
         <attribute name="type" type="int32">0</attribute>
         <attribute name="shortcut" type="string">c</attribute>
         <attribute name="title" type="string">City</attribute>
-        <attribute name="index" type="int32">4</attribute>
+        <attribute name="index" type="int32">5</attribute>
         <attribute name="identifier" type="string">989A2020-4EC3-491A-9AE9-01EAD4E5F39C</attribute>
         <relationship name="parent" type="1/1" destination="THING" idrefs="z148"></relationship>
         <relationship name="record" type="1/1" destination="RECORD"></relationship>
         <relationship name="children" type="0/0" destination="THING"></relationship>
-        <relationship name="notes" type="0/0" destination="NOTE" idrefs="z153 z172 z167"></relationship>
+        <relationship name="notes" type="0/0" destination="NOTE" idrefs="z172 z153 z167"></relationship>
     </object>
     <object type="TODO" id="z152">
         <attribute name="status" type="int32">3</attribute>
@@ -509,14 +421,14 @@
     </object>
     <object type="TODO" id="z154">
         <attribute name="status" type="int32">0</attribute>
-        <attribute name="datedue" type="date">462232800.00000000000000000000</attribute>
+        <attribute name="datedue" type="date">462168000.00000000000000000000</attribute>
         <attribute name="content" type="string">\u3c00note xml:space="preserve"\u3e00I'm hungry\u3c00/note\u3e00</attribute>
         <attribute name="focustype" type="int32">131072</attribute>
         <attribute name="focuslevel" type="int16">1</attribute>
-        <attribute name="datemodified" type="date">259452105.16014200448989868164</attribute>
+        <attribute name="datemodified" type="date">318303550.24941098690032958984</attribute>
         <attribute name="datecreated" type="date">259257733.72509700059890747070</attribute>
         <attribute name="title" type="string">Make dinner</attribute>
-        <attribute name="index" type="int32">1</attribute>
+        <attribute name="index" type="int32">0</attribute>
         <attribute name="identifier" type="string">69AC6796-91B5-46F4-9520-0220C5668719</attribute>
         <attribute name="compact" type="bool">0</attribute>
         <relationship name="parent" type="1/1" destination="THING"></relationship>
@@ -527,11 +439,12 @@
         <relationship name="recurrencetemplate" type="1/1" destination="TODO"></relationship>
         <relationship name="scheduler" type="1/1" destination="GLOBALS" idrefs="z122"></relationship>
         <relationship name="syncdata" type="1/1" destination="SYNCEDTASK"></relationship>
-        <relationship name="children" type="0/0" destination="THING" idrefs="z163 z161 z160 z157 z159 z156 z165 z158 z162"></relationship>
+        <relationship name="children" type="0/0" destination="THING" idrefs="z163 z157 z165 z161 z162 z156 z158 z160 z159"></relationship>
         <relationship name="tags" type="0/0" destination="TAG" idrefs="z150"></relationship>
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z155">
+        <attribute name="datemodified" type="date">318303001.84699100255966186523</attribute>
         <attribute name="status" type="int32">0</attribute>
         <attribute name="focustype" type="int32">131072</attribute>
         <attribute name="focuslevel" type="int16">2</attribute>
@@ -549,7 +462,7 @@
         <relationship name="scheduler" type="1/1" destination="GLOBALS"></relationship>
         <relationship name="syncdata" type="1/1" destination="SYNCEDTASK"></relationship>
         <relationship name="children" type="0/0" destination="THING" idrefs="z187 z186 z185"></relationship>
-        <relationship name="tags" type="0/0" destination="TAG"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z192"></relationship>
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z156">
@@ -623,10 +536,10 @@
     </object>
     <object type="TODO" id="z159">
         <attribute name="status" type="int32">0</attribute>
-        <attribute name="todayoffset" type="float">5</attribute>
+        <attribute name="todayoffset" type="float">7</attribute>
         <attribute name="focustype" type="int32">65536</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
-        <attribute name="datemodified" type="date">259287229.61027300357818603516</attribute>
+        <attribute name="datemodified" type="date">318303405.46096402406692504883</attribute>
         <attribute name="datecreated" type="date">259257798.34121200442314147949</attribute>
         <attribute name="title" type="string">email bar</attribute>
         <attribute name="index" type="int32">3</attribute>
@@ -645,6 +558,7 @@
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z160">
+        <attribute name="status" type="int32">0</attribute>
         <attribute name="focustype" type="int32">131072</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
         <attribute name="datemodified" type="date">259257808.35365000367164611816</attribute>
@@ -666,6 +580,7 @@
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z161">
+        <attribute name="status" type="int32">0</attribute>
         <attribute name="focustype" type="int32">131072</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
         <attribute name="datemodified" type="date">259257816.39263200759887695312</attribute>
@@ -687,6 +602,7 @@
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z162">
+        <attribute name="status" type="int32">0</attribute>
         <attribute name="focustype" type="int32">131072</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
         <attribute name="datemodified" type="date">259257820.91711801290512084961</attribute>
@@ -708,6 +624,7 @@
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z163">
+        <attribute name="status" type="int32">0</attribute>
         <attribute name="focustype" type="int32">131072</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
         <attribute name="datemodified" type="date">259257822.81700900197029113770</attribute>
@@ -750,6 +667,7 @@
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z165">
+        <attribute name="status" type="int32">0</attribute>
         <attribute name="focustype" type="int32">131072</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
         <attribute name="datemodified" type="date">259257881.49450901150703430176</attribute>
@@ -881,10 +799,10 @@
     </object>
     <object type="TODO" id="z171">
         <attribute name="status" type="int32">0</attribute>
-        <attribute name="todayoffset" type="float">6</attribute>
+        <attribute name="todayoffset" type="float">8</attribute>
         <attribute name="focustype" type="int32">65536</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
-        <attribute name="datemodified" type="date">259284444.24546098709106445312</attribute>
+        <attribute name="datemodified" type="date">318303405.46097999811172485352</attribute>
         <attribute name="datecreated" type="date">259258000.56638500094413757324</attribute>
         <attribute name="title" type="string">today item</attribute>
         <attribute name="index" type="int32">7</attribute>
@@ -904,10 +822,10 @@
     </object>
     <object type="TODO" id="z172">
         <attribute name="status" type="int32">0</attribute>
-        <attribute name="todayoffset" type="float">4</attribute>
+        <attribute name="todayoffset" type="float">6</attribute>
         <attribute name="focustype" type="int32">65536</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
-        <attribute name="datemodified" type="date">259456119.54405900835990905762</attribute>
+        <attribute name="datemodified" type="date">318303405.46094501018524169922</attribute>
         <attribute name="datecreated" type="date">259258007.17809200286865234375</attribute>
         <attribute name="title" type="string">today item with multiple tags</attribute>
         <attribute name="index" type="int32">6</attribute>
@@ -922,16 +840,16 @@
         <relationship name="scheduler" type="1/1" destination="GLOBALS"></relationship>
         <relationship name="syncdata" type="1/1" destination="SYNCEDTASK"></relationship>
         <relationship name="children" type="0/0" destination="THING"></relationship>
-        <relationship name="tags" type="0/0" destination="TAG" idrefs="z150 z151"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG" idrefs="z151 z150"></relationship>
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z173">
         <attribute name="status" type="int32">3</attribute>
         <attribute name="datecompleted" type="date">259258100.84093499183654785156</attribute>
-        <attribute name="todayoffset" type="float">3</attribute>
+        <attribute name="todayoffset" type="float">5</attribute>
         <attribute name="focustype" type="int32">65536</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
-        <attribute name="datemodified" type="date">259284434.98407700657844543457</attribute>
+        <attribute name="datemodified" type="date">318303405.46092998981475830078</attribute>
         <attribute name="datecreated" type="date">259258009.52748399972915649414</attribute>
         <attribute name="title" type="string">complete today item with a tag</attribute>
         <attribute name="index" type="int32">5</attribute>
@@ -953,10 +871,10 @@
         <attribute name="status" type="int32">3</attribute>
         <attribute name="datecompleted" type="date">259258101.33345100283622741699</attribute>
         <attribute name="content" type="string">\u3c00note xml:space="preserve"\u3e00these are notes: lorem ipsum foo bar baz\u3c00/note\u3e00</attribute>
-        <attribute name="todayoffset" type="float">2</attribute>
+        <attribute name="todayoffset" type="float">4</attribute>
         <attribute name="focustype" type="int32">65536</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
-        <attribute name="datemodified" type="date">259284432.56689798831939697266</attribute>
+        <attribute name="datemodified" type="date">318303405.46091502904891967773</attribute>
         <attribute name="datecreated" type="date">259258015.81557801365852355957</attribute>
         <attribute name="title" type="string">complete today item with notes</attribute>
         <attribute name="index" type="int32">4</attribute>
@@ -977,10 +895,10 @@
     <object type="TODO" id="z175">
         <attribute name="status" type="int32">0</attribute>
         <attribute name="content" type="string">\u3c00note xml:space="preserve"\u3e00hello world foo bar bazable\u3c00/note\u3e00</attribute>
-        <attribute name="todayoffset" type="float">1</attribute>
+        <attribute name="todayoffset" type="float">3</attribute>
         <attribute name="focustype" type="int32">65536</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
-        <attribute name="datemodified" type="date">259284429.53385201096534729004</attribute>
+        <attribute name="datemodified" type="date">318303405.46090197563171386719</attribute>
         <attribute name="datecreated" type="date">259258021.76599699258804321289</attribute>
         <attribute name="title" type="string">today item with notes</attribute>
         <attribute name="index" type="int32">3</attribute>
@@ -1001,10 +919,10 @@
     <object type="TODO" id="z176">
         <attribute name="status" type="int32">3</attribute>
         <attribute name="datecompleted" type="date">259258123.94329300522804260254</attribute>
-        <attribute name="todayoffset" type="float">0</attribute>
+        <attribute name="todayoffset" type="float">2</attribute>
         <attribute name="focustype" type="int32">65536</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
-        <attribute name="datemodified" type="date">259284425.72727099061012268066</attribute>
+        <attribute name="datemodified" type="date">318303405.46088802814483642578</attribute>
         <attribute name="datecreated" type="date">259258030.56705099344253540039</attribute>
         <attribute name="title" type="string">complete today item</attribute>
         <attribute name="index" type="int32">2</attribute>
@@ -1209,6 +1127,7 @@
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z185">
+        <attribute name="status" type="int32">0</attribute>
         <attribute name="focustype" type="int32">131072</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
         <attribute name="datemodified" type="date">259456937.73161101341247558594</attribute>
@@ -1230,11 +1149,13 @@
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z186">
-        <attribute name="focustype" type="int32">131072</attribute>
+        <attribute name="todayoffset" type="float">1</attribute>
+        <attribute name="status" type="int32">0</attribute>
+        <attribute name="focustype" type="int32">65536</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
-        <attribute name="datemodified" type="date">259456950.89940801262855529785</attribute>
+        <attribute name="datemodified" type="date">318303405.46085399389266967773</attribute>
         <attribute name="datecreated" type="date">259456940.58271199464797973633</attribute>
-        <attribute name="datedue" type="date">270770400.00000000000000000000</attribute>
+        <attribute name="datedue" type="date">270705600.00000000000000000000</attribute>
         <attribute name="title" type="string">cut my hair</attribute>
         <attribute name="index" type="int32">1</attribute>
         <attribute name="identifier" type="string">771D0663-7CD2-4309-BFE4-294203C43D42</attribute>
@@ -1245,19 +1166,20 @@
         <relationship name="focus" type="1/1" destination="FOCUS" idrefs="z141"></relationship>
         <relationship name="recurrenceinstance" type="1/1" destination="TODO"></relationship>
         <relationship name="recurrencetemplate" type="1/1" destination="TODO"></relationship>
-        <relationship name="scheduler" type="1/1" destination="GLOBALS"></relationship>
+        <relationship name="scheduler" type="1/1" destination="GLOBALS" idrefs="z122"></relationship>
         <relationship name="syncdata" type="1/1" destination="SYNCEDTASK"></relationship>
         <relationship name="children" type="0/0" destination="THING"></relationship>
         <relationship name="tags" type="0/0" destination="TAG" idrefs="z148"></relationship>
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z187">
+        <attribute name="status" type="int32">0</attribute>
         <attribute name="focustype" type="int32">131072</attribute>
         <attribute name="focuslevel" type="int16">1</attribute>
-        <attribute name="datemodified" type="date">259495720.56461501121520996094</attribute>
+        <attribute name="datemodified" type="date">318303557.02221101522445678711</attribute>
         <attribute name="datecreated" type="date">259458019.70463600754737854004</attribute>
         <attribute name="title" type="string">A personal project</attribute>
-        <attribute name="index" type="int32">0</attribute>
+        <attribute name="index" type="int32">1</attribute>
         <attribute name="identifier" type="string">653C9BA3-F846-4A95-B2BB-7CB53B53674F</attribute>
         <attribute name="compact" type="bool">1</attribute>
         <relationship name="parent" type="1/1" destination="THING" idrefs="z155"></relationship>
@@ -1273,9 +1195,11 @@
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
     <object type="TODO" id="z188">
-        <attribute name="focustype" type="int32">131072</attribute>
+        <attribute name="todayoffset" type="float">0</attribute>
+        <attribute name="status" type="int32">0</attribute>
+        <attribute name="focustype" type="int32">65536</attribute>
         <attribute name="focuslevel" type="int16">0</attribute>
-        <attribute name="datemodified" type="date">259458036.67186400294303894043</attribute>
+        <attribute name="datemodified" type="date">318303405.46099901199340820312</attribute>
         <attribute name="datecreated" type="date">259458029.12348100543022155762</attribute>
         <attribute name="title" type="string">with personal todo</attribute>
         <attribute name="index" type="int32">0</attribute>
@@ -1339,5 +1263,32 @@
         <relationship name="children" type="0/0" destination="THING"></relationship>
         <relationship name="tags" type="0/0" destination="TAG"></relationship>
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
+    </object>
+    <object type="SYNCEDCALENDAR" id="z190">
+        <attribute name="title" type="string">Work</attribute>
+        <attribute name="systemid" type="string">B8CE8849-5713-4B58-823E-0974D2138EFE</attribute>
+        <attribute name="syncs" type="bool">0</attribute>
+        <attribute name="iseditable" type="bool">1</attribute>
+        <attribute name="index" type="int32">0</attribute>
+        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
+    </object>
+    <object type="SYNCEDCALENDAR" id="z191">
+        <attribute name="title" type="string">Home</attribute>
+        <attribute name="systemid" type="string">D9C5F52B-865C-449C-B320-1C12AEEA3E4D</attribute>
+        <attribute name="syncs" type="bool">0</attribute>
+        <attribute name="iseditable" type="bool">1</attribute>
+        <attribute name="index" type="int32">0</attribute>
+        <relationship name="tasks" type="0/0" destination="SYNCEDTASK"></relationship>
+    </object>
+    <object type="TAG" id="z192">
+        <attribute name="type" type="int32">0</attribute>
+        <attribute name="dateused" type="date">318303001.84781998395919799805</attribute>
+        <attribute name="title" type="string">tagged</attribute>
+        <attribute name="index" type="int32">2</attribute>
+        <attribute name="identifier" type="string">9A65D16B-0EE7-4368-ACAE-1FCBECDBBB5D</attribute>
+        <relationship name="parent" type="1/1" destination="THING"></relationship>
+        <relationship name="record" type="1/1" destination="RECORD"></relationship>
+        <relationship name="children" type="0/0" destination="THING"></relationship>
+        <relationship name="notes" type="0/0" destination="NOTE" idrefs="z155"></relationship>
     </object>
 </database>

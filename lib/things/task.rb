@@ -62,6 +62,12 @@ module Things
     def parent?
       !!parent
     end
+    
+    def ancestors
+      [parent, (parent? ? parent.ancestors : nil)].compact.uniq
+    end
+    
+    alias_method :parents, :ancestors
 
     def completed?
       status == COMPLETED

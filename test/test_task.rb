@@ -9,10 +9,11 @@ class TaskTest < Test::Unit::TestCase
   
   def find_task(name)
     title = {
-      :with_tags   => 'today item with multiple tags',
-      :basic       => 'today item',
-      :with_parent => 'email bar',
-      :with_notes  => 'today item with content (notes)',
+      :with_tags      => 'today item with multiple tags',
+      :basic          => 'today item',
+      :with_parent    => 'email bar',
+      :with_ancestors => 'with personal todo',
+      :with_notes     => 'today item with content (notes)',
     }[name]
     @things.today.detect { |t| t.title == title }
   end
@@ -91,6 +92,11 @@ class TaskTest < Test::Unit::TestCase
   test "should know if there is a parent project" do
     assert(find_task(:with_parent).parent?)
     assert(!find_task(:basic).parent?)
+  end
+  
+  test "should find all ancestors" do
+    task = find_task(:with_ancestors)
+    assert_equal 2, task.ancestors.length
   end
   
   test "should know if the task is completed" do
