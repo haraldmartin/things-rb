@@ -1,8 +1,5 @@
-begin
-  require 'hpricot'
-rescue LoadError => e
-  puts "Hpricot is missing. Run `gem install hpricot` to install"
-end
+require "bundler/setup"
+require 'hpricot'
 require "time"
 
 class Symbol
