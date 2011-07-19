@@ -5,9 +5,13 @@ module Things
     attr_reader :database_file
   
     def initialize(options = {}, &block)
-      @database_file = options[:database] || DEFAULT_DATABASE_PATH
       @focus_cache = {}
-      parse!
+      if options[:database_content]
+        @doc = Hpricot(options[:database_content])
+      else
+        @database_file = options[:database] || DEFAULT_DATABASE_PATH
+        parse!
+      end
       yield self if block_given?
     end
   
