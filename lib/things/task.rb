@@ -139,6 +139,11 @@ module Things
       children.any?
     end
     
+    # If the task referrences a recurrence rule. Instances will not be identified as recurring?
+    def recurring?
+      !!@xml_node.at("attribute[@name='recurrenceruledata']")
+    end
+    
     private
     
     def tasks_from_ids(ids)

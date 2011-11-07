@@ -1340,4 +1340,35 @@
         <relationship name="tags" type="0/0" destination="TAG"></relationship>
         <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
     </object>
+    <object type="TODO" id="z191">
+        <attribute name="usermodificationdate" type="date">342381804.75055497884750366211</attribute>
+        <attribute name="todayoffset" type="float">1</attribute>
+        <attribute name="recurrenceruledata" type="binary">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHBsaXN0IFBV
+QkxJQyAiLS8vQXBwbGUvL0RURCBQTElTVCAxLjAvL0VOIiAiaHR0cDovL3d3dy5hcHBsZS5jb20vRFREcy9Qcm9wZXJ0eUxpc3QtMS4wLmR0ZCI+CjxwbGlzdCB2ZXJzaW9uPSIxLjAiPgo8ZGljdD4KCTxrZXk+UmVjdXJyZW5jZVJ1bGVWZXJzaW9uPC9rZXk+Cgk8aW50ZWdlcj4yPC9pbnRlZ2VyPgoJPGtleT5lbmREYXRlPC9rZXk+Cgk8ZGF0ZT40MDAwLTEyLTMxVDA4OjAwOjAwWjwvZGF0ZT4KCTxrZXk+ZnJlcXVlbmN5QW1vdW50PC9rZXk+Cgk8aW50ZWdlcj4xPC9pbnRlZ2VyPgoJPGtleT5mcmVxdWVuY3lVbml0PC9rZXk+Cgk8aW50ZWdlcj4xNjwvaW50ZWdlcj4KCTxrZXk+aW50ZXJ2YWxBbmNob3I8L2tleT4KCTxkYXRlPjIwMTEtMTEtMDdUMDg6MDA6MDBaPC9kYXRlPgoJPGtleT5vZmZzZXRzPC9rZXk+Cgk8YXJyYXk+CgkJPGRpY3Q+CgkJCTxrZXk+ZGF5PC9rZXk+CgkJCTxpbnRlZ2VyPjA8L2ludGVnZXI+CgkJPC9kaWN0PgoJPC9hcnJheT4KCTxrZXk+cmVwZWF0Q291bnQ8L2tleT4KCTxpbnRlZ2VyPjA8L2ludGVnZXI+Cgk8a2V5PnN0YXJ0RGF0ZTwva2V5PgoJPGRhdGU+MjAxMS0xMS0wN1QwODowMDowMFo8L2RhdGU+Cgk8a2V5PnRpbWVTcGFuSW5EYXlzPC9rZXk+Cgk8aW50ZWdlcj4wPC9pbnRlZ2VyPgoJPGtleT50eXBlPC9rZXk+Cgk8aW50ZWdlcj4wPC9pbnRlZ2VyPgo8L2RpY3Q+CjwvcGxpc3Q+Cg==
+</attribute>
+        <attribute name="instancecreationstartdate" type="date">342432000.00000000000000000000</attribute>
+        <attribute name="instancecreationpaused" type="bool">0</attribute>
+        <attribute name="instancecreationcount" type="int32">1</attribute>
+        <attribute name="focustype" type="int32">16777216</attribute>
+        <attribute name="focuslevel" type="int16">0</attribute>
+        <attribute name="datemodified" type="date">342381804.76973098516464233398</attribute>
+        <attribute name="datecreated" type="date">342381804.74625998735427856445</attribute>
+        <attribute name="title" type="string">Get dry cleaning</attribute>
+        <attribute name="index" type="int32">1</attribute>
+        <attribute name="identifier" type="string">74F0F94E-ACFC-4351-A651-4E7D61F9ED64</attribute>
+        <attribute name="compact" type="bool">1</attribute>
+        <relationship name="parent" type="1/1" destination="THING"></relationship>
+        <relationship name="author" type="1/1" destination="COWORKER"></relationship>
+        <relationship name="delegate" type="1/1" destination="COWORKER"></relationship>
+        <relationship name="focus" type="1/1" destination="FOCUS" idrefs="z126"></relationship>
+        <relationship name="recurrenceinstance" type="1/1" destination="TODO"></relationship>
+        <relationship name="recurrencetemplate" type="1/1" destination="TODO"></relationship>
+        <relationship name="repeatingtemplate" type="1/1" destination="TODO"></relationship>
+        <relationship name="scheduler" type="1/1" destination="GLOBALS" idrefs="z114"></relationship>
+        <relationship name="syncdata" type="1/1" destination="SYNCEDTASK"></relationship>
+        <relationship name="children" type="0/0" destination="THING"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG"></relationship>
+        <relationship name="reminderdates" type="0/0" destination="REMINDER"></relationship>
+        <relationship name="repeatinginstances" type="0/0" destination="TODO" idrefs="z146 z144"></relationship>
+    </object>
 </database>
