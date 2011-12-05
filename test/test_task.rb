@@ -167,6 +167,14 @@ class TaskTest < Test::Unit::TestCase
     assert task_by_id("z191").recurring?
     assert !find_task(:basic).recurring?
   end
+  
+  test "should find focus level" do
+    assert task_by_id("z188").focus_level == 0
+  end
+  
+  test "should have areas of responsibility" do
+    assert task_by_id("z185").area_of_responsibility == "Personal"
+  end
 
   test "each state should have a bullet" do
     assert_equal "✓", task_by_id("z173").bullet # complete
