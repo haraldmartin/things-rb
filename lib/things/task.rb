@@ -144,6 +144,25 @@ module Things
       !!@xml_node.at("attribute[@name='recurrenceruledata']")
     end
     
+    def focus_level
+      node = @xml_node.at("attribute[@name='focuslevel']")
+      node.inner_text.to_i
+    end
+    
+    def area_of_responsibility
+      return unless parent?
+      
+      # Parent is an Area of Responsibility
+      if parent.focus_level == 2
+        parent.title
+      # Parent is a Project, but may belong to an Area of Resp.
+      elsif parent.focus_level == 1 &&
+            parent.parent &&
+            parent.parent.focus_level == 2
+        parent.parent.title
+      end
+    end
+    
     private
     
     def tasks_from_ids(ids)
