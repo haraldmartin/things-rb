@@ -7,7 +7,7 @@ module Things
     def initialize(options = {}, &block)
       @focus_cache = {}
       if options[:database_content]
-        @doc = Hpricot(options[:database_content])
+        @doc = Nokogiri::XML.parse(options[:database_content])
       else
         @database_file = options[:database] || DEFAULT_DATABASE_PATH
         parse!
@@ -37,7 +37,7 @@ module Things
     private
 
     def parse!
-      @doc = Hpricot(IO.read(database_file))
+      @doc = Nokogiri::XML.parse(IO.read(database_file))
     end
   end
 end

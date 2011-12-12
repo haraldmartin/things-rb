@@ -16,7 +16,7 @@ module Things
     end
 
     def title
-      @xml_node.at("attribute[@name='title']").inner_text
+      @xml_node.xpath("attribute[@name='title']").inner_text
     end
 
     alias_method :to_s, :title
@@ -39,7 +39,7 @@ module Things
 
     def tags
       @tags ||= tag_ids.map do |tag_id|
-        @doc.at("##{tag_id} attribute[@name=title]").inner_text
+        @doc.xpath("//object[@type='TAG'][@id='#{tag_id}']/attribute[@name='title']").inner_text
       end
     end
 
@@ -81,8 +81,8 @@ module Things
     end
     
     def notes
-      @notes ||= (node = @xml_node.at("attribute[@name='content']")) &&
-        Hpricot.parse(node.inner_text.gsub(/\\u3c00/, "<").gsub(/\\u3e00/, ">")).inner_text
+      @notes ||= (node = @xml_node.at_xpath("attribute[@name='content']")) &&
+        Nokogiri::XML.parse(node.inner_text.gsub(/\\u3c00/, "<").gsub(/\\u3e00/, ">")).inner_text
     end
     
     def notes?
@@ -90,11 +90,11 @@ module Things
     end
     
     def status
-      @status ||= (node = @xml_node.at("attribute[@name='status']")) && node.inner_text.to_i
+      @status ||= (node = @xml_node.at_xpath("attribute[@name='status']")) && node.inner_text.to_i
     end
     
     def position
-      @position ||= @xml_node.at("attribute[@name='index']").inner_text.to_i
+      @position ||= @xml_node.at_xpath("attribute[@name='index']").inner_text.to_i
     end
     
     alias_method :index, :position
@@ -109,6 +109,7 @@ module Things
     end
 
     def scheduled_date
+      
       @scheduled_date ||= date_attribute('tickledate')
     end
     
@@ -141,11 +142,11 @@ module Things
     
     # If the task referrences a recurrence rule. Instances will not be identified as recurring?
     def recurring?
-      !!@xml_node.at("attribute[@name='recurrenceruledata']")
+      !!@xml_node.at_xpath("attribute[@name='recurrenceruledata']")
     end
     
     def focus_level
-      node = @xml_node.at("attribute[@name='focuslevel']")
+      node = @xml_node.at_xpath("attribute[@name='focuslevel']")
       node.inner_text.to_i
     end
     
@@ -170,7 +171,7 @@ module Things
     end
     
     def task_from_id(id)
-      if (node = @doc.at("##{id}")) && node.inner_text.strip != ''
+      if node = @doc.xpath("//object[@type='TODO'][@id='#{id}']").first
         Task.new(node, @doc)
       else
         nil
@@ -183,15 +184,15 @@ module Things
     end
     
     def ids_from_relationship(name)
-      if node = @xml_node.at("relationship[@name='#{name}'][@idrefs]")
-        node.attributes['idrefs'].split
+      if node = @xml_node.xpath("relationship[@name='#{name}'][@idrefs]").first
+        node.attributes['idrefs'].value.split
       else
         []
       end
     end
   
     def date_attribute(name)
-      (node = @xml_node.at("attribute[@name='#{name}']")) && node.inner_text.to_f.to_cocoa_date
+      (node = @xml_node.at_xpath("attribute[@name='#{name}']")) && node.inner_text.to_f.to_cocoa_date
     end
   end
 end

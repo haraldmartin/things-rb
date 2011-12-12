@@ -1,5 +1,5 @@
 require "bundler/setup"
-require 'hpricot'
+require 'nokogiri'
 require "time"
 
 class Symbol

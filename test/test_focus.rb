@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'ruby-debug'
 
 class FocusTest < Test::Unit::TestCase
   def setup
@@ -34,17 +35,17 @@ class FocusTest < Test::Unit::TestCase
   end
   
   test 'should allow "next" as alias for NextActions focus' do
-    focus = Things::Focus.new(:next, stub(:at => ''))
+    focus = Things::Focus.new(:next, stub(:xpath => []))
     assert_equal "FocusNextActions", focus.type_name
   end
 
   test 'should allow "nextactions" as alias for NextActions focus' do
-    focus = Things::Focus.new(:nextactions, stub(:at => ''))
+    focus = Things::Focus.new(:nextactions, stub(:xpath => []))
     assert_equal "FocusNextActions", focus.type_name
   end
   
   test 'should allow "someday" as alias for Maybe focus' do
-    focus = Things::Focus.new(:someday, stub(:at => ''))
+    focus = Things::Focus.new(:someday, stub(:xpath => []))
     assert_equal "FocusMaybe", focus.type_name
   end
 
