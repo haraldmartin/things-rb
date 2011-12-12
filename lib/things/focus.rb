@@ -5,7 +5,7 @@ module Things
     def initialize(name, doc)
       @name     = name
       @doc      = doc
-      @xml_node = @doc.xpath("//object[@type='FOCUS']/attribute[@name='identifier'][text()='#{type_name}']/..").first
+      @xml_node = @doc.at_xpath("//object[@type='FOCUS']/attribute[@name='identifier'][text()='#{type_name}']/..")
     end
     
     def type_name

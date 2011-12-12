@@ -1,7 +1,6 @@
 # -*- encoding: utf-8 -*-
 
 require 'test_helper'
-require 'ruby-debug'
 
 class TaskTest < Test::Unit::TestCase
   def setup
@@ -23,7 +22,7 @@ class TaskTest < Test::Unit::TestCase
   end
   
   def task_by_id(id)
-    node = @things.database.xpath("//object[@type='TODO'][@id='#{id}']").first
+    node = @things.database.at_xpath("//object[@type='TODO'][@id='#{id}']")
     Things::Task.new(node, @things.database)
   end
 

@@ -171,7 +171,7 @@ module Things
     end
     
     def task_from_id(id)
-      if node = @doc.xpath("//object[@type='TODO'][@id='#{id}']").first
+      if node = @doc.at_xpath("//object[@type='TODO'][@id='#{id}']")
         Task.new(node, @doc)
       else
         nil
@@ -184,7 +184,7 @@ module Things
     end
     
     def ids_from_relationship(name)
-      if node = @xml_node.xpath("relationship[@name='#{name}'][@idrefs]").first
+      if node = @xml_node.at_xpath("relationship[@name='#{name}'][@idrefs]")
         node.attributes['idrefs'].value.split
       else
         []
