@@ -16,7 +16,7 @@ module Things
     end
 
     def title
-      @xml_node.xpath("attribute[@name='title']").inner_text
+      @xml_node.at_xpath("attribute[@name='title']").inner_text
     end
 
     alias_method :to_s, :title
@@ -39,7 +39,7 @@ module Things
 
     def tags
       @tags ||= tag_ids.map do |tag_id|
-        @doc.xpath("//object[@type='TAG'][@id='#{tag_id}']/attribute[@name='title']").inner_text
+        @doc.at_xpath("//object[@type='TAG'][@id='#{tag_id}']/attribute[@name='title']").inner_text
       end
     end
 
@@ -109,7 +109,6 @@ module Things
     end
 
     def scheduled_date
-      
       @scheduled_date ||= date_attribute('tickledate')
     end
     
