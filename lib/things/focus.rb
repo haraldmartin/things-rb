@@ -5,7 +5,7 @@ module Things
     def initialize(name, doc)
       @name     = name
       @doc      = doc
-      @xml_node = @doc.at("//object[@type='FOCUS']/attribute[@name='identifier'][text()='#{type_name}']/..")
+      @xml_node = @doc.at_xpath("//object[@type='FOCUS']/attribute[@name='identifier'][text()='#{type_name}']/..")
     end
     
     def type_name
@@ -20,11 +20,11 @@ module Things
     end
 
     def id
-      @id ||= @xml_node.attributes['id']
+      @id ||= @xml_node.attributes['id'].value
     end
 
     def type_id
-      @type_id ||= @xml_node.at("/attribute[@name='focustype']").inner_text
+      @type_id ||= @xml_node.at_xpath('attribute[@name=\'focustype\']').inner_text
     end
     
     def tasks(options = {})

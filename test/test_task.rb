@@ -22,7 +22,7 @@ class TaskTest < Test::Unit::TestCase
   end
   
   def task_by_id(id)
-    node = @things.database.at("object[@type='TODO']##{id}")
+    node = @things.database.at_xpath("//object[@type='TODO'][@id='#{id}']")
     Things::Task.new(node, @things.database)
   end
 
