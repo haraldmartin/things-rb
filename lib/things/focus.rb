@@ -31,6 +31,13 @@ module Things
       options ||= {} # when options == nil
       
       selector = "//object[@type='TODO']/attribute[@name='focustype'][text()='#{type_id}']/.."
+      
+      # Non-recurring scheduled tasks have different type_id's (16842752).
+      # FocusTickler's type_id is for recurring scheduled.
+      if @name.to_s == 'scheduled'
+        selector = "//object[@type='TODO']/attribute[@name='focustype'][text()='#{type_id}' or text()='16842752']/.."
+      end
+      
       @all_tasks ||= @doc.search(selector).map do |task_xml|
         Task.new(task_xml, @doc)
       end
