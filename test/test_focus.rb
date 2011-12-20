@@ -104,4 +104,9 @@ class FocusTest < Test::Unit::TestCase
     with_children = @things.focus(:next).tasks.select(&:children?)
     assert_equal 0, with_children.length
   end
+  
+  test "should include non-recurring scheduled tasks when focus is 'scheduled'" do
+    tasks = @things.focus(:scheduled).tasks
+    assert_equal 2, tasks.count
+  end
 end
