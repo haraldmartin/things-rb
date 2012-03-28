@@ -6,7 +6,7 @@ module Things
   
     def initialize(options = {}, &block)
       @focus_cache = {}
-      if options[:database_content]
+      if options.has_key?(:database_content)
         @doc = Nokogiri::XML.parse(options[:database_content])
       else
         @database_file = options[:database] || DEFAULT_DATABASE_PATH
