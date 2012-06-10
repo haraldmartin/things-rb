@@ -17,11 +17,11 @@ class DocumentTest < Test::Unit::TestCase
     assert_equal(default_db, Things.new.database_file)
   end
   
-  test "should return a parsed Hpricot document" do
-    IO.expects(:read).with('/my/db.xml').returns("foo").at_least_once
+  test "should return a parsed Nokogiri document" do
+    IO.expects(:read).with('/my/db.xml').at_least_once
     things = Things.new(:database => '/my/db.xml')
-    assert_equal("Hpricot::Doc", things.database.class.to_s)
-    assert_equal "foo", things.database.to_s
+    assert_equal("Nokogiri::XML::Document", things.database.class.to_s)
+    assert_equal "<?xml version=\"1.0\"?>\n", things.database.to_s
   end
 
   [:today, :inbox, :trash, :logbook, :next, :scheduled].each do |type|

@@ -34,17 +34,17 @@ class FocusTest < Test::Unit::TestCase
   end
   
   test 'should allow "next" as alias for NextActions focus' do
-    focus = Things::Focus.new(:next, stub(:at => ''))
+    focus = Things::Focus.new(:next, stub(:at_xpath => ''))
     assert_equal "FocusNextActions", focus.type_name
   end
 
   test 'should allow "nextactions" as alias for NextActions focus' do
-    focus = Things::Focus.new(:nextactions, stub(:at => ''))
+    focus = Things::Focus.new(:nextactions, stub(:at_xpath => ''))
     assert_equal "FocusNextActions", focus.type_name
   end
   
   test 'should allow "someday" as alias for Maybe focus' do
-    focus = Things::Focus.new(:someday, stub(:at => ''))
+    focus = Things::Focus.new(:someday, stub(:at_xpath => ''))
     assert_equal "FocusMaybe", focus.type_name
   end
 
@@ -103,5 +103,10 @@ class FocusTest < Test::Unit::TestCase
   test "should not include projects when listing tasks" do
     with_children = @things.focus(:next).tasks.select(&:children?)
     assert_equal 0, with_children.length
+  end
+  
+  test "should include non-recurring scheduled tasks when focus is 'scheduled'" do
+    tasks = @things.focus(:scheduled).tasks
+    assert_equal 2, tasks.count
   end
 end

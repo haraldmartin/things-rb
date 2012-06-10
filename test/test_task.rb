@@ -22,7 +22,7 @@ class TaskTest < Test::Unit::TestCase
   end
   
   def task_by_id(id)
-    node = @things.database.at("object[@type='TODO']##{id}")
+    node = @things.database.at_xpath("//object[@type='TODO'][@id='#{id}']")
     Things::Task.new(node, @things.database)
   end
 
@@ -158,9 +158,22 @@ class TaskTest < Test::Unit::TestCase
     assert_equal "2019-03-20", scheduled.scheduled_date.strftime("%Y-%m-%d")
   end
   
-  test "should know if a task i scheduled" do
+  test "should know if a task is scheduled" do
     assert task_by_id("z166").scheduled?
     assert !find_task(:basic).scheduled?
+  end
+  
+  test "should know if a task has recurrance rules" do
+    assert task_by_id("z191").recurring?
+    assert !find_task(:basic).recurring?
+  end
+  
+  test "should find focus level" do
+    assert task_by_id("z188").focus_level == 0
+  end
+  
+  test "should have areas of responsibility" do
+    assert task_by_id("z185").area_of_responsibility == "Personal"
   end
 
   test "each state should have a bullet" do

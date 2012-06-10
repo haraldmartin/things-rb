@@ -5,9 +5,13 @@ module Things
     attr_reader :database_file
   
     def initialize(options = {}, &block)
-      @database_file = options[:database] || DEFAULT_DATABASE_PATH
       @focus_cache = {}
-      parse!
+      if options.has_key?(:database_content)
+        @doc = Nokogiri::XML.parse(options[:database_content])
+      else
+        @database_file = options[:database] || DEFAULT_DATABASE_PATH
+        parse!
+      end
       yield self if block_given?
     end
   
@@ -33,7 +37,7 @@ module Things
     private
 
     def parse!
-      @doc = Hpricot(IO.read(database_file))
+      @doc = Nokogiri::XML.parse(IO.read(database_file))
     end
   end
 end
